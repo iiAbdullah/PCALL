@@ -1,0 +1,939 @@
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: rgb(0, 0, 0) !important;
+}
+
+/* Additional Styling for Secondary Navbar */
+
+@media (max-width: 1100px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+/* General Navbar Styling */
+.navbar {
+  background-color: #ffffff !important;
+}
+
+.primary-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.secondary-navbar {
+  margin-top: 77px; /* Adjust margin to match the height of the primary navbar */
+  background-color: #ffcc00 !important;
+}
+
+.navbar .nav-link:hover {
+  color: #000000 !important;
+}
+
+/* Responsive Centering */
+@media (max-width: 1100px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+/* Primary Navbar */
+.primary-navbar {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  max-height: 40px; /* Adjust logo size as necessary */
+  margin-right: 15px;
+}
+
+.search-bar {
+  flex-grow: 1;
+  max-width: 600px;
+  display: flex;
+}
+
+.search-input {
+  border: none;
+  padding: 8px;
+  width: 100%;
+}
+
+.search-button {
+  width: 40px; /* Width for the yellow square button */
+  background-color: #ffd700; /* Gold background */
+  border: none;
+}
+
+.navbar-icons {
+  gap: 20px;
+}
+
+.nav-icon {
+  color: #000000;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-left: 15px; /* Space between icons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-bar {
+    max-width: 100%;
+  }
+  .navbar-icons {
+    display: none; /* Hide icons on smaller screens */
+  }
+}
+
+/* Primary Navbar Hover Effect */
+.primary-navbar .primary-hover:hover {
+  background-color: #ffd700; /* Yellow background on hover */
+  color: #000; /* Black text color on hover */
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+/* Secondary Navbar Hover Effect */
+.secondary-navbar .secondary-hover:hover {
+  background-color: #ffffff; /* White background on hover */
+  color: #000; /* Black text color on hover */
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+/* Hero section styles */
+.hero-section {
+  padding: 25px 0;
+  background-color: #ffffffde;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 80vh;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideIn 2s ease-out forwards;
+}
+
+/* Product Carousel - Horizontal Slide (translateX) */
+.carousel-item {
+  opacity: 0;
+  transform: translateX(100%); /* Start off to the right */
+  animation: slideInX 0.5s forwards; /* Animate from right to left */
+}
+
+/* Active carousel item */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  opacity: 1;
+  transform: translateX(0); /* Reset to normal position */
+}
+
+/* Slide-in Animation on X-axis for product carousel */
+@keyframes slideInX {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+/* Second Carousel - Vertical Slide (translateY) */
+.carousel-item {
+  opacity: 0;
+  transform: translateX(100%); /* Start below */
+  animation: slideInY 0.5s forwards; /* Animate from below to top */
+}
+
+/* Active carousel item for second carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  opacity: 1;
+  transform: translateX(0); /* Reset to normal position */
+}
+
+/* Slide-in Animation on Y-axis for second carousel */
+@keyframes slideInY {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+#productCarousel .carousel-item {
+  opacity: 0;
+  transform: translateX(100%); /* Start off to the right */
+  animation: slideInX 0.5s forwards; /* Animate from right to left */
+}
+
+/* Active carousel item */
+#productCarousel .carousel-item-next,
+#productCarousel .carousel-item-prev,
+#productCarousel .carousel-item.active {
+  opacity: 1;
+  transform: translateX(0); /* Reset to normal position */
+}
+
+/* Slide-in Animation on X-axis for product carousel */
+@keyframes slideInX {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+/* Optional: Optional settings for smooth sliding */
+.carousel-inner {
+  display: flex;
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Prevent items from stretching */
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.btn-custom {
+  background-color: #002c7feb;
+  color: white;
+  border-radius: 30px;
+  padding: 12px 30px;
+}
+
+.btn-custom:hover {
+  background-color: #eed700;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 100px;
+}
+
+.hero-card {
+  position: relative; /* To make sure card stays above the shapes */
+  z-index: 5;
+}
+
+.card {
+  min-height: 300px; /* Adjust height as needed */
+}
+
+.carousel-landscape {
+  max-width: 90vw; /* 90% of viewport width for landscape effect */
+  max-height: 130vh; /* 50% of viewport height */
+  overflow: hidden;
+}
+.carousel-landscape img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Scale image to cover carousel dimensions */
+}
+/* Center vertically */
+.centered-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 29vh; /* Center within full viewport height */
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title span {
+  padding: 0 10px; /* Adds spacing between text and lines */
+  font-size: 2rem; /* Adjust font size as needed */
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid black; /* Style of the lines */
+  margin: 5px 10px; /* Adds spacing between text and lines */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+:root {
+  --font1: "Heebo", sans-serif;
+  --font2: "Fira Sans Extra Condensed", sans-serif;
+  --font3: "Roboto", sans-serif;
+
+  --btnbg: #ffcc00;
+  --btnfontcolor: rgb(61, 61, 61);
+  --btnfontcolorhover: rgb(255, 255, 255);
+  --btnbghover: #ffc116;
+  --btnactivefs: rgb(241, 195, 46);
+
+  --label-index: #960796;
+  --danger-index: #5bc257;
+  /* PAGINATE */
+  --link-color: #000;
+  --link-color-hover: #fff;
+  --bg-content-color: #ffcc00;
+}
+
+.container-fluid {
+  max-width: 1400px;
+}
+
+.card {
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  border: 0;
+  border-radius: 1rem;
+}
+
+.card-img,
+.card-img-top {
+  border-top-left-radius: calc(1rem - 1px);
+  border-top-right-radius: calc(1rem - 1px);
+}
+
+.card h5 {
+  overflow: hidden;
+  height: 55px;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.card h5 a {
+  color: black;
+  text-decoration: none;
+}
+
+.card-img-top {
+  width: 100%;
+  min-height: 250px;
+  max-height: 250px;
+  object-fit: contain;
+  padding: 30px;
+}
+
+.card h2 {
+  font-size: 1rem;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Centered text */
+.label-top {
+  position: absolute;
+  background-color: var(--label-index);
+  color: #fff;
+  top: 8px;
+  right: 8px;
+  padding: 5px 10px 5px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.top-right {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 900;
+  background: #8bc34a;
+  line-height: 90px;
+  text-align: center;
+  color: white;
+}
+
+.top-right span {
+  display: inline-block;
+  vertical-align: middle;
+  /* line-height: normal; */
+  /* padding: 0 25px; */
+}
+
+.aff-link {
+  /* text-decoration: overline; */
+  font-weight: 500;
+}
+
+.over-bg {
+  background: rgba(53, 53, 53, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+}
+.bold-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 5px 50px 5px 50px;
+}
+.box .btn {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1025px) {
+  .btn {
+    padding: 5px 40px 5px 40px;
+  }
+}
+@media (max-width: 250px) {
+  .btn {
+    padding: 5px 30px 5px 30px;
+  }
+}
+
+/* START BUTTON */
+.btn-warning {
+  background: var(--btnbg);
+  color: var(--btnfontcolor);
+  fill: #ffffff;
+  border: none;
+  text-decoration: none;
+  outline: 0;
+  /* box-shadow: -1px 6px 19px rgba(247, 129, 10, 0.25); */
+  border-radius: 100px;
+}
+.btn-warning:hover {
+  background: var(--btnbghover);
+  color: var(--btnfontcolorhover);
+  /* box-shadow: -1px 6px 13px rgba(255, 150, 43, 0.35); */
+}
+.btn-check:focus + .btn-warning,
+.btn-warning:focus {
+  background: var(--btnbghover);
+  color: var(--btnfontcolorhover);
+  /* box-shadow: -1px 6px 13px rgba(255, 150, 43, 0.35); */
+}
+.btn-warning:active:focus {
+  box-shadow: 0 0 0 0.25rem var(--btnactivefs);
+}
+.btn-warning:active {
+  background: var(--btnbghover);
+  color: var(--btnfontcolorhover);
+  /* box-shadow: -1px 6px 13px rgba(255, 150, 43, 0.35); */
+}
+
+/* END BUTTON */
+
+.bg-success {
+  font-size: 1rem;
+  background-color: var(--btnbg) !important;
+  color: var(--btnfontcolor) !important;
+}
+.bg-danger {
+  font-size: 1rem;
+}
+
+.price-hp {
+  font-size: 1rem;
+  font-weight: 600;
+  color: darkgray;
+}
+
+.amz-hp {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: darkgray;
+}
+
+.fa-question-circle:before {
+  /* content: "\f059"; */
+  color: darkgray;
+}
+
+.fa-heart:before {
+  color: crimson;
+}
+.fa-chevron-circle-right:before {
+  color: darkgray;
+}
+
+.sidebar {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  width: 200px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+.sidebar h4 {
+  margin-bottom: 15px;
+}
+.category-item {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.category-item:hover {
+  background-color: #cfcfcf;
+}
+.product-card {
+  display: none; /* Hide all products initially */
+}
+.list-group-item:hover {
+  background-color: #e7cf4a93; /* Light gray hover color */
+}
+.navbar-toggler {
+  border-color: black; /* Sets the border of the toggle button to black */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Active effect for the selected category or brand */
+.list-group-item.active {
+  background-color: #007bff; /* Blue background for active selection */
+  color: white; /* White text color when active */
+}
+
+/* Card hover effect */
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.price {
+  color: #e74c3c;
+  font-weight: bold;
+}
+.old-price {
+  text-decoration: line-through;
+  color: #7f8c8d;
+}
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+}
+.fulfilled-badge {
+  font-size: 0.8rem;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Initial state for the cards before animation */
+.slide-in {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Animation for sliding in from the left */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Add a delay to the animations for each subsequent card */
+
+/* Custom icon color for the previous and next buttons only within #productCarousel */
+#productCarousel
+  .carousel-control-prev.custom-carousel-control
+  .carousel-control-prev-icon,
+#productCarousel
+  .carousel-control-next.custom-carousel-control
+  .carousel-control-next-icon {
+  color: black; /* Change the color of the icons to black */
+  background-color: #0000009e;
+}
+
+#productCarousel .carousel-control-prev.custom-carousel-control,
+#productCarousel .carousel-control-next.custom-carousel-control {
+  border: none; /* Optional: Remove any borders if needed */
+}
+
+.wrapper * {
+  flex: 0 0 auto;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.py-8 {
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+.footer-link-01 li + li {
+  padding-top: 0.8rem;
+}
+
+.footer-title-01 {
+  font-size: 16px;
+  margin: 0 0 20px;
+  font-weight: 600;
+}
+
+.footer-title-01 {
+  font-size: 16px;
+  margin: 0 0 20px;
+  font-weight: 600;
+}
+
+.footer-link-01 li + li {
+  padding-top: 0.8rem;
+}
+
+@media (max-width: 991.98px) {
+  .footer-link-01 li + li {
+    padding-top: 0.6rem;
+  }
+}
+
+.footer-link-01 a {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-link-01 a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 0;
+  height: 1px;
+  transition: ease all 0.35s;
+  background: currentColor;
+}
+
+.footer-link-01 a:hover:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+footer {
+  flex-shrink: 0; /* Ensures the footer does not shrink */
+  width: 100%;
+  height: 100%;
+  background-color: #2a2a2a;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+.feature-icon {
+  font-size: 2.6rem;
+  color: #000000; /* Adjust color as needed */
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  padding: 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100px; /* Ensures a perfect circle */
+  height: 100px; /* Ensures a perfect circle */
+}
+.feature-box {
+  text-align: center;
+  padding: 20px;
+}
+.feature-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.feature-subtitle {
+  font-weight: normal;
+  color: #666;
+}
+.horizontal-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 400px; /* Set a height for the card */
+}
+
+.card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire card without stretching */
+  z-index: 1;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.177
+  ); /* Adjust overlay color and transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Ensure overlay is above the image */
+}
+
+.card-text {
+  font-size: 1.5rem;
+  color: #000; /* Adjust text color as needed */
+  z-index: 3;
+}
+
+/* Custom CSS for layout */
+.filter-sidebar {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+.filter-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.product-grid img {
+  height: 200px;
+  object-fit: cover;
+}
+.product-grid .card {
+  border: none;
+  transition: transform 0.3s;
+}
+.product-grid .card:hover {
+  transform: scale(1.05);
+}
+.filter-section {
+  margin-bottom: 20px;
+}
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+/* Filter Sidebar */
+.filter-sidebar {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  position: center;
+  margin-top: 50px;
+}
+
+/* Filter Titles */
+.filter-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Filter Sections */
+.filter-section {
+  margin-bottom: 20px;
+}
+
+/* Price Range Text */
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Filter Button */
+.filter-sidebar .btn {
+  background-color: #dcb800;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  border: 0px #000;
+}
+
+.filter-sidebar .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Product Grid */
+.product-grid .card {
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-grid .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-grid img {
+  height: 100px;
+  object-fit: cover;
+}
+
+.product-grid .card-body {
+  text-align: center;
+}
+
+.product-grid .card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-grid .card-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.product-grid .fw-bold {
+  font-size: 1.1rem;
+  color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-sidebar {
+    display: none;
+  }
+}
+
+/* Margin between the secondary navbar and products */
+.product-grid {
+  margin-top: 50px; /* Adjust the value as needed */
+}
+
+/* Alternatively, if you want more control, you could apply the margin to the row or container itself */
+.container.my-5 {
+  margin-top: 100px; /* Adjust this value to set the desired spacing */
+}
+.product-grid-container {
+  margin-top: 100px; /* Adjust the value as needed */
+  margin-bottom: 50px;
+}
+.secondary-navbar2 {
+  margin-bottom: 1220px; /* Adds space below the yellow navbar */
+}
+.product-grid-container {
+  margin-top: 50px; /* Adjust the value as needed */
+}
+
+/* Default styles for larger screens */
+.secondary-navbar .navbar-nav .nav-link {
+  font-size: 1.2rem; /* Default size */
+  padding: 0.5rem 1rem; /* Default padding */
+}
+
+.secondary-navbar .nav-item {
+  margin: 0 1rem; /* Default spacing */
+}
+
+/* Adjust styles for smaller screens */
+@media (max-width: 768px) {
+  .secondary-navbar .navbar-nav .nav-link {
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 0.3rem 0.8rem; /* Reduced padding */
+  }
+
+  .secondary-navbar .nav-item {
+    margin: 0.5rem; /* Adjust spacing between items */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .secondary-navbar .navbar-nav .nav-link {
+    font-size: 0.8rem; /* Even smaller font size */
+    padding: 0.2rem 0.5rem; /* Minimal padding */
+  }
+
+  .secondary-navbar .nav-item {
+    margin: 0.3rem; /* Less spacing between items */
+  }
+}
+.secondary-navbar {
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.card {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-footer button {
+  font-size: 0.875rem;
+}

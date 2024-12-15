@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Products</title>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar primary-navbar border navbar-expand-lg fixed-top rounded-bottom bg-light"
+    >
+      <div class="scontainer">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="../images/logoco2.png"
+            alt="Logo"
+            width="200"
+            height="60"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav mx-5">
+            <li class="nav-item mx-3">
+              <a class="nav-link primary-hover" href="index.html">Home</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link primary-hover" href="#">Products</a>
+            </li>
+
+            <li class="nav-item mx-1">
+              <a class="nav-link primary-hover" href="about_us.html"
+                >About Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+      <h1 class="text-center mb-4">Manage Products</h1>
+
+      <!-- Product List Table -->
+      <div class="mb-5">
+        <h2>Existing Products</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productList">
+            <!-- Example data -->
+            <tr>
+              <td>1</td>
+              <td>Gaming Laptop</td>
+              <td>Laptops</td>
+              <td>$1200</td>
+              <td>
+                <button class="btn btn-primary btn-sm" onclick="editProduct(1)">
+                  Edit
+                </button>
+                <button
+                  class="btn btn-danger btn-sm"
+                  onclick="deleteProduct(1)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Product Form -->
+      <div class="mb-5">
+        <h2 id="formTitle">Add New Product</h2>
+        <form id="productForm">
+          <input type="hidden" id="productId" value="" />
+          <div class="mb-3">
+            <label for="productName" class="form-label">Product Name</label>
+            <input
+              type="text"
+              id="productName"
+              class="form-control"
+              placeholder="Enter product name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="productCategory" class="form-label">Category</label>
+            <select id="productCategory" class="form-select">
+              <option value="Gaming PCs">Gaming PCs</option>
+              <option value="Laptops">Laptops</option>
+              <option value="Accessories">Accessories</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="productPrice" class="form-label">Price</label>
+            <input
+              type="number"
+              id="productPrice"
+              class="form-control"
+              placeholder="Enter product price"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-success">Save Product</button>
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer
+      class="text-center text-white mt-5"
+      style="background-color: #2a2a2a"
+    >
+      <div class="container p-4">
+        <section>
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+              <h6 class="text-uppercase font-weight-bold">
+                <img
+                  src="..\images/logoco.png"
+                  alt="PCALL Logo"
+                  style="height: 36px; margin-right: 8px"
+                />
+              </h6>
+              <p class="text-justify fst-italic text-break fs-6 mb-0 2h-5">
+                Whether you're a gamer, content creator, or professional seeking
+                top-tier performance, we have everything you need to elevate
+                your tech experience. Your dream setup is just a click away!
+              </p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4">Products</h6>
+              <p><a href="#" class="text-white">Gaming PCs</a></p>
+              <p><a href="#" class="text-white">Laptops</a></p>
+              <p><a href="#" class="text-white">Accessories</a></p>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4">Contact</h6>
+              <p><i class="fas fa-home mr-3"></i> Yanbu, SA</p>
+              <p><i class="fas fa-envelope mr-3"></i> PCALL@gmail.com</p>
+              <p><i class="fas fa-phone mr-3"></i> +966 563 531 789</p>
+            </div>
+
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+              <a
+                class="btn btn-primary btn-floating m-1 border-0"
+                style="background-color: #3b5998"
+                href="#!"
+                role="button"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a
+                class="btn btn-primary btn-floating m-1 border-0"
+                style="background-color: #000000"
+                href="#!"
+                role="button"
+              >
+                <i class="bi bi-twitter-x"></i>
+              </a>
+              <a
+                class="btn btn-primary btn-floating m-1 border-0"
+                style="background-color: #dd4b39"
+                href="#!"
+                role="button"
+              >
+                <i class="bi bi-google"></i>
+              </a>
+              <a
+                class="btn btn-primary btn-floating m-1 border-0"
+                style="background-color: #ac2bac"
+                href="#!"
+                role="button"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a
+                class="btn btn-primary btn-floating m-1 border-0"
+                style="background-color: #006edb"
+                href="#!"
+                role="button"
+              >
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.2) !important"
+      >
+        © 2024 Copyright:
+        <a class="text-white" href="#">PCALL</a>
+      </div>
+    </footer>
+
+    <script>
+      const productList = document.getElementById("productList");
+      const productForm = document.getElementById("productForm");
+      const formTitle = document.getElementById("formTitle");
+      let editMode = false;
+
+      // Reset form to default state
+      function resetForm() {
+        productForm.reset();
+        document.getElementById("productId").value = "";
+        formTitle.textContent = "Add New Product";
+        editMode = false;
+      }
+
+      // Edit product
+      function editProduct(id) {
+        const row = document.querySelector(`#productList tr:nth-child(${id})`);
+        const cells = row.children;
+
+        document.getElementById("productId").value = id;
+        document.getElementById("productName").value = cells[1].textContent;
+        document.getElementById("productCategory").value = cells[2].textContent;
+        document.getElementById("productPrice").value =
+          cells[3].textContent.replace("$", "");
+
+        formTitle.textContent = "Edit Product";
+        editMode = true;
+      }
+
+      // Delete product
+      function deleteProduct(id) {
+        const row = document.querySelector(`#productList tr:nth-child(${id})`);
+        row.remove();
+      }
+
+      // Handle form submission
+      productForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const id = document.getElementById("productId").value;
+        const name = document.getElementById("productName").value;
+        const category = document.getElementById("productCategory").value;
+        const price = document.getElementById("productPrice").value;
+
+        if (editMode) {
+          // Update existing product
+          const row = document.querySelector(
+            `#productList tr:nth-child(${id})`
+          );
+          row.children[1].textContent = name;
+          row.children[2].textContent = category;
+          row.children[3].textContent = `$${price}`;
+        } else {
+          // Add new product
+          const newRow = document.createElement("tr");
+          newRow.innerHTML = `
+          <td>${productList.children.length + 1}</td>
+          <td>${name}</td>
+          <td>${category}</td>
+          <td>$${price}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" onclick="editProduct(${
+              productList.children.length + 1
+            })">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteProduct(${
+              productList.children.length + 1
+            })">Delete</button>
+          </td>
+        `;
+          productList.appendChild(newRow);
+        }
+
+        resetForm();
+      });
+    </script>
+  </body>
+</html>
